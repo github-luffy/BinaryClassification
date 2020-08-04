@@ -1,10 +1,51 @@
-<<<<<<< HEAD
-# PFLD
-TAble 1:  
-  The code for cauculating euler angles prediction loss have been released.
+# BinaryClassify
 
-Table 2:   
-  The code has a flaw that i calculate euler angles ground-truth while training process,so the training speed have slowed down because  some work have to be finished on the cpu ,you should calculate the euler angles in the preprocess code
-=======
-# BinaryClassification
->>>>>>> 640dac371a1888996ea21192158d93e5f7f6a1dc
+Implementation of a binary classify By pytorch
+
+### DataSets
+
+  Prepare a dataset for positive and negative samples. Such as Eye Dataset, determine open eyes as positive samples, closed eyes as negative samples.
+
+  1.put positive samples to `./data/positive/`
+
+  2.put negative samples to `./data/negative/` 
+
+  3.run `./data/train_test_data.py`
+  
+  ~~~shell
+      $ cd ./data 
+      $ python3 train_test_data.py
+  ~~~
+ 
+### training & testing
+
+training :
+
+~~~shell
+$ sh train.sh
+~~~
+
+testing:
+
+~~~shell
+$ python3 camera.py
+~~~
+
+### pytorch -> onnx -> ncnn
+
+**Pytorch -> onnx -> onnx_sim**  
+
+make sure pip3 install onnx-simplifier
+
+~~~~shell
+python3 pytorch2onnx.py
+python3 -m onnxsim model.onnx model_sim.onnx
+~~~~
+
+**onnx_sim -> ncnn**  
+
+how to build :https://github.com/Tencent/ncnn/wiki/how-to-build
+~~~shell
+cd ncnn/build/tools/onnx
+./onnx2ncnn model_sim.onnx model_sim.param model_sim.bin
+~~~
