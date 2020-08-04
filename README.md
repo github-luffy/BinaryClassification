@@ -38,8 +38,8 @@ Implementation of a binary classify By pytorch
 make sure pip3 install onnx-simplifier
 
  ~~~~shell
-  python3 pytorch2onnx.py
-  python3 -m onnxsim model.onnx model_sim.onnx
+  $ python3 pytorch2onnx.py
+  $ python3 -m onnxsim model.onnx model_sim.onnx
  ~~~~
 
 **onnx_sim -> ncnn**  
@@ -47,8 +47,8 @@ make sure pip3 install onnx-simplifier
 how to build :https://github.com/Tencent/ncnn/wiki/how-to-build
 
  ~~~shell
-  cd ncnn/build/tools/onnx
-  ./onnx2ncnn model_sim.onnx model_sim.param model_sim.bin
+  $ cd ncnn/build/tools/onnx
+  $ ./onnx2ncnn model_sim.onnx model_sim.param model_sim.bin
  ~~~
 
 ### TODO:
