@@ -13,23 +13,23 @@ Implementation of a binary classify By pytorch
   3.run `./data/train_test_data.py`
   
   ~~~shell
-      $ cd ./data 
-      $ python3 train_test_data.py
+   $ cd ./data 
+   $ python3 train_test_data.py
   ~~~
  
 ### training & testing
 
-training :
+  training :
 
-~~~shell
-$ sh train.sh
-~~~
+  ~~~shell
+   $ sh train.sh
+  ~~~
 
-testing:
-
-~~~shell
-$ python3 test_img.py
-~~~
+ testing:
+ 
+ ~~~shell
+  $ python3 test_img.py
+ ~~~
 
 ### pytorch -> onnx -> ncnn
 
@@ -37,18 +37,19 @@ $ python3 test_img.py
 
 make sure pip3 install onnx-simplifier
 
-~~~~shell
-python3 pytorch2onnx.py
-python3 -m onnxsim model.onnx model_sim.onnx
-~~~~
+ ~~~~shell
+  python3 pytorch2onnx.py
+  python3 -m onnxsim model.onnx model_sim.onnx
+ ~~~~
 
 **onnx_sim -> ncnn**  
 
 how to build :https://github.com/Tencent/ncnn/wiki/how-to-build
-~~~shell
-cd ncnn/build/tools/onnx
-./onnx2ncnn model_sim.onnx model_sim.param model_sim.bin
-~~~
+
+ ~~~shell
+  cd ncnn/build/tools/onnx
+  ./onnx2ncnn model_sim.onnx model_sim.param model_sim.bin
+ ~~~
 
 ### TODO:
 
