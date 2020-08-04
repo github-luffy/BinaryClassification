@@ -28,7 +28,7 @@ $ sh train.sh
 testing:
 
 ~~~shell
-$ python3 camera.py
+$ python3 test_img.py
 ~~~
 
 ### pytorch -> onnx -> ncnn
@@ -49,3 +49,10 @@ how to build :https://github.com/Tencent/ncnn/wiki/how-to-build
 cd ncnn/build/tools/onnx
 ./onnx2ncnn model_sim.onnx model_sim.param model_sim.bin
 ~~~
+
+### TODO:
+
+- [x] ncnn inference
+- [ ] train on FocalLoss
+- [ ] train on multi-class model
+- [ ] fix bugs
